@@ -107,9 +107,9 @@ public class MatchService {
 
         List<TeamTournament> teamTournamentsByTournament = teamTournamentList
                 .stream()
-                        .filter(teamTournament -> teamTournament.getTournament().getId().equals(chosenTournamentObject.getId()))
+                .filter(teamTournament -> teamTournament.getTournament().getId().equals(chosenTournamentObject.getId()))
                 .filter(teamTournament -> teamTournament.getTeam().getId().equals(filteredWinnerTeam.getId()))
-                                .collect(Collectors.toList());
+                .collect(Collectors.toList());
         int points = teamTournamentsByTournament.get(0).getTeamPoints();
       teamTournamentsByTournament.get(0).setTeamPoints(points+1);
 
